@@ -7,7 +7,6 @@
  */
 int main(int argc, char **argv)
 {
-	int i = 0;
 	FILE *filed;
 	char *lineptr = NULL;
 	size_t n = 0;
@@ -17,7 +16,6 @@ int main(int argc, char **argv)
 	while(getline(&lineptr, &n, filed) != -1)
 	{
 		printf("%s", lineptr);
-		i++;
 	}
 	free(lineptr);
 	fclose(filed);
