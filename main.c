@@ -8,25 +8,30 @@
 int main(int argc, char **argv)
 {
 	char *lineptr = NULL;
-	char *lineptrcpy = NULL;
-	instruction_t commandarr;
+	char *lines[1000] = {NULL};
+	char *instruct[2] = {NULL, NULL};
 	int linenum = 0;
 	FILE *filed;
-	char *token;
+	char *token = NULL;
+	int index = 0;
 	size_t n = 0;
+	stack_t **stack;
 	filed = fopen(argv[1], "r");
 	checkargerror(argc);
 	while(getline(&lineptr, &n, filed) != -1)
 	{
-		lineptrcpy = strdup(lineptr);
-		token = strtok(lineptrcpy, "\n");
-		while(token)
-		{
-			printf("%s\n", token);
-			token = strtok(NULL, "\n");
-		}
-		free(lineptrcpy);
+		lineptr = strtok(lineptr, "\n");
+		lines[linenum] = strdup(lineptr);
 		linenum++;
+	}
+	while(lines[index])
+	{
+		token = strtok(lines[index], " ");
+		instruct[0] = token;
+		token = strtok(NULL, " ");
+		instruct[1] = token;
+		printf("%s %s\n", instruct[0], instruct[1]);
+		index++;
 	}
 	free(lineptr);
 	fclose(filed);
