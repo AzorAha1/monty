@@ -33,6 +33,10 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
 void checkargerror(int argument_count);
-void (*getf)(stack_t **stack, unsigned int line_number)
+void getf(stack_t **stack, const char *opcode, unsigned int line_number);
+void op_push(stack_t **stack, unsigned int line_number);
+void op_pop(stack_t **stack, unsigned int line_number);
+
 #endif
