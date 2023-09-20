@@ -9,8 +9,11 @@
  * Description: doubly linked list node structure
  * for stack, queues, LIFO, FIFO
  */
+#define _POSIX_C_SOURCE 200809L
 #include <stdio.h>
 #define __GNU_SOURCE
+#include <string.h>
+#include <stdlib.h>
 typedef struct stack_s
 {
 	int n;
@@ -30,4 +33,5 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+void checkargerror(int argument_count);
 #endif
