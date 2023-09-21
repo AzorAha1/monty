@@ -10,7 +10,7 @@ void op_push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new_node;
 	int temp;
-	
+
 	temp = atoi(instruct[1]);
 
 	if (temp == 0)
@@ -34,11 +34,27 @@ void op_push(stack_t **stack, unsigned int line_number)
 	*stack = new_node;
 }
 /**
+ * op_pop - Removes the top element of the stack.
+ * @stack: Pointer to the stack.
+ * @line_number: Line number
  *
- * 
+ * Return: nothing
  */
 void op_pop(stack_t **stack, unsigned int line_number)
 {
-	(void)stack;
-	(void)line_number;
+	stack_t *tmp;
+
+	if (*stack == NULL)
+	{
+		printf("error %d", line_number);
+		/*fprintf(stderr, "Error: can't pop an empty stack\n");*/
+		exit(EXIT_FAILURE);
+	}
+	tmp = *stack;
+	*stack = (*stack)->next;
+
+	if (*stack != NULL)
+		(*stack)->prev = NULL;
+
+	free(tmp);
 }
