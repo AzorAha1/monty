@@ -20,7 +20,7 @@ void op_push(stack_t **stack, unsigned int line_number)
 
 	if (temp == 0 && strcmp(instruct[1], "0") != 0)
 	{
-		printf("error %d", line_number);
+		fprintf(stderr,"error %d", line_number);
 		exit(EXIT_FAILURE);
 	}
 	new_node = malloc(sizeof(stack_t));
