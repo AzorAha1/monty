@@ -11,21 +11,17 @@ void op_push(stack_t **stack, unsigned int line_number)
 	stack_t *new_node;
 	int temp;
 
-	if (!instruct[1])
+	if (!instruct[1] || stack == NULL)
 	{
 		printf("error %d", line_number);
-		exit(EXIT_FAILURE);
-	}
-	if (*stack == NULL || stack == NULL)
-	{
-		printf("error\n");
 		exit(EXIT_FAILURE);
 	}
 	temp = atoi(instruct[1]);
 
-	if (temp == 0)
+	if (temp == 0 && strcmp(instruct[1], "0") != 0)
 	{
 		printf("error %d", line_number);
+		exit(EXIT_FAILURE);
 	}
 	new_node = malloc(sizeof(stack_t));
 	if (new_node == NULL)
