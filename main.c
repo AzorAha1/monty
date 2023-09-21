@@ -19,6 +19,11 @@ int main(int argc, char **argv)
 
 
 	filed = fopen(argv[1], "r");
+	if (!filed)
+	{
+		fprintf(stderr, "error: %s\n", argv[1]);
+		exit(EXIT_FAILURE);
+	}
 	checkargerror(argc);
 	while(getline(&lineptr, &n, filed) != -1)
 	{
