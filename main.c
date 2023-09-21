@@ -38,7 +38,6 @@ int main(int argc, char **argv)
 		token = strtok(NULL, " ");
 		instruct[1] = token;
 		getf(&stack, instruct, index + 1);
-		printf("%s %s\n", instruct[0], instruct[1]);
 		index++;
 	}
 	for (i = 0; i < linenum; i++)

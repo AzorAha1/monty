@@ -13,7 +13,7 @@ void op_push(stack_t **stack, unsigned int line_number)
 
 	if (!instruct[1] || stack == NULL)
 	{
-		printf("error %d", line_number);
+		fprintf(stderr, "Error %d", line_number);
 		exit(EXIT_FAILURE);
 	}
 	temp = atoi(instruct[1]);
@@ -33,7 +33,7 @@ void op_push(stack_t **stack, unsigned int line_number)
 	new_node->prev = NULL;
 	new_node->next = NULL;
 
-	if (stack != NULL)
+	if (*stack != NULL)
 	{
 		new_node->next = *stack;
 		(*stack)->prev = new_node;
@@ -50,11 +50,11 @@ void op_push(stack_t **stack, unsigned int line_number)
 void op_pop(stack_t **stack, unsigned int line_number)
 {
 	stack_t *tmp;
+	(void)line_number;
 
 	if (*stack == NULL)
 	{
-		printf("error %d", line_number);
-		/*fprintf(stderr, "Error: can't pop an empty stack\n");*/
+		fprintf(stderr, "Error: can't pop an empty stack\n");
 		exit(EXIT_FAILURE);
 	}
 	tmp = *stack;

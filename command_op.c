@@ -29,6 +29,6 @@ void getf(stack_t **stack, char **opcode, unsigned int line_number)
 	}
 	if (checker == 0)
 	{
-		fprintf(stderr,"L%d: unknown instruction %s", line_number, opcode[0]);
+		fprintf(stderr,"L%d: unknown instruction %s\n", line_number, opcode[0]);
 	}	
 }
