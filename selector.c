@@ -68,7 +68,7 @@ void op_pop(stack_t **stack, unsigned int line_number)
 #include <stdio.h>
 
 /**
- * pall - Prints all the elements in the stack.
+ * op_pall - Prints all the elements in the stack.
  * @stack: Pointer to the stack.
  * @line_number: Line number
  *
@@ -84,4 +84,30 @@ void op_pall(stack_t **stack, unsigned int line_number)
 		printf("%d\n", current->n);
 		current = current->next;
 	}
+}
+/**
+ * op_add - add all the elements in the stack.
+ * @stack: pointer to the stack
+ * @line_number: Line number
+ * Description - adds all elements in stack
+ * Return: no return
+*/
+void op_add(stack_t **stack, unsigned int line_number)
+{
+	stack_t *temp;
+	int add;
+
+	add = 0;
+	if (*stack == NULL)
+	{
+		printf("L%d: can't add, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	temp = *stack;
+	add += temp->n;
+	temp = temp->next;
+	add += temp->n;
+	temp->n = add;
+	temp->prev = NULL;
+	*stack = temp; 
 }

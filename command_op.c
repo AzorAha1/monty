@@ -13,6 +13,7 @@ void getf(stack_t **stack, char **opcode, unsigned int line_number)
 		{"push", op_push},
 		{"pop", op_pop},
 		{"pall", op_pall},
+		{"add", op_add},
 		{NULL, NULL},
 	};
 	checker = 0;
