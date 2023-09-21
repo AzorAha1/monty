@@ -2,8 +2,9 @@
 
 /**
  * op_push -  insert a new node
- * @stack_t: pointer to pointer to a stack
- * @value: to be pushed
+ * @stack: pointer to pointer to a stack
+ * @line_number: to be pushed
+ * Description - push to stack
  * Return: nothing
  */
 void op_push(stack_t **stack, unsigned int line_number)
@@ -20,7 +21,7 @@ void op_push(stack_t **stack, unsigned int line_number)
 
 	if (temp == 0 && strcmp(instruct[1], "0") != 0)
 	{
-		fprintf(stderr,"error %d", line_number);
+		fprintf(stderr, "error %d", line_number);
 		exit(EXIT_FAILURE);
 	}
 	new_node = malloc(sizeof(stack_t));
@@ -44,7 +45,7 @@ void op_push(stack_t **stack, unsigned int line_number)
  * op_pop - Removes the top element of the stack.
  * @stack: Pointer to the stack.
  * @line_number: Line number
- *
+ * Description - pop
  * Return: nothing
  */
 void op_pop(stack_t **stack, unsigned int line_number)
@@ -71,7 +72,7 @@ void op_pop(stack_t **stack, unsigned int line_number)
  * op_pall - Prints all the elements in the stack.
  * @stack: Pointer to the stack.
  * @line_number: Line number
- *
+ * Description - print all elements
  * Return: nothing
  */
 void op_pall(stack_t **stack, unsigned int line_number)
@@ -125,5 +126,5 @@ void op_pint(stack_t **stack, unsigned int line_number)
 		printf("L%d: can't pint, stack empty\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-	printf("%d\n",(*stack)->n);
+	printf("%d\n", (*stack)->n);
 }

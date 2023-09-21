@@ -25,13 +25,13 @@ int main(int argc, char **argv)
 		exit(EXIT_FAILURE);
 	}
 	checkargerror(argc);
-	while(getline(&lineptr, &n, filed) != -1)
+	while (getline(&lineptr, &n, filed) != -1)
 	{
 		lineptr = strtok(lineptr, "\n");
 		lines[linenum] = strdup(lineptr);
 		linenum++;
 	}
-	while(lines[index])
+	while (lines[index])
 	{
 		token = strtok(lines[index], " ");
 		instruct[0] = token;

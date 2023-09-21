@@ -1,5 +1,10 @@
 #ifndef MONTY_H
 #define MONTY_H
+#define _POSIX_C_SOURCE 200809L
+#include <stdio.h>
+#define __GNU_SOURCE
+#include <string.h>
+#include <stdlib.h>
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -9,11 +14,7 @@
  * Description: doubly linked list node structure
  * for stack, queues, LIFO, FIFO
  */
-#define _POSIX_C_SOURCE 200809L
-#include <stdio.h>
-#define __GNU_SOURCE
-#include <string.h>
-#include <stdlib.h>
+
 typedef struct stack_s
 {
 	int n;

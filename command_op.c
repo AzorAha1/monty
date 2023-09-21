@@ -1,6 +1,11 @@
 #include "monty.h"
 /**
- *
+ * getf - function name
+ * @stack: stack
+ * @opcode: opcode
+ * @line_number: line number
+ * Description - finding functions by the str passed
+ * Return: void
  *
  */
 void getf(stack_t **stack, char **opcode, unsigned int line_number)
@@ -31,6 +36,7 @@ void getf(stack_t **stack, char **opcode, unsigned int line_number)
 	}
 	if (checker == 0)
 	{
-		fprintf(stderr,"L%d: unknown instruction %s\n", line_number, opcode[0]);
-	}	
+		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode[0]);
+	}
 }
+
