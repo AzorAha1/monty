@@ -17,12 +17,20 @@ int main(int argc, char **argv)
 	stack_t *stack = NULL;
 	size_t n = 0;
 
-
-	filed = fopen(argv[1], "r");
-	if (!filed)
+	if (argc != 2 || argv[1] == NULL)
 	{
-		printf("Error: Can't open file %s\n", argv[1]);
+		fprintf(stderr, "Usage: %s <filename>\n", argv[0]);
 		exit(EXIT_FAILURE);
+	}
+	if (access(argv[1], F_OK | R_OK) == 0)
+	{
+		filed = fopen(argv[1], "r");
+		if (!filed)
+		{
+			printf("Error: Can't open file %s\n", argv[1]);
+			fclose(filed);
+			exit(EXIT_FAILURE);
+		}
 	}
 	checkargerror(argc);
 	while (getline(&lineptr, &n, filed) != -1)

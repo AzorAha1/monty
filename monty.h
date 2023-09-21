@@ -3,6 +3,8 @@
 #define _POSIX_C_SOURCE 200809L
 #include <stdio.h>
 #define __GNU_SOURCE
+#include <unistd.h>
+#include <fcntl.h>
 #include <string.h>
 #include <stdlib.h>
 /**
