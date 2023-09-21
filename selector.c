@@ -66,7 +66,6 @@ void op_pop(stack_t **stack, unsigned int line_number)
 
 	free(tmp);
 }
-#include <stdio.h>
 
 /**
  * op_pall - Prints all the elements in the stack.
