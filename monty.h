@@ -35,8 +35,8 @@ typedef struct instruction_s
 } instruction_t;
 
 void checkargerror(int argument_count);
-void getf(stack_t **stack, const char *opcode, unsigned int line_number);
+void getf(stack_t **stack, char **opcode, unsigned int line_number);
 void op_push(stack_t **stack, unsigned int line_number);
 void op_pop(stack_t **stack, unsigned int line_number);
-
+extern char *instruct[2];
 #endif
