@@ -11,6 +11,16 @@ void op_push(stack_t **stack, unsigned int line_number)
 	stack_t *new_node;
 	int temp;
 
+	if (!instruct[1])
+	{
+		printf("error %d", line_number);
+		exit(EXIT_FAILURE);
+	}
+	if (*stack == NULL || stack == NULL)
+	{
+		printf("error\n");
+		exit(EXIT_FAILURE);
+	}
 	temp = atoi(instruct[1]);
 
 	if (temp == 0)
@@ -25,10 +35,11 @@ void op_push(stack_t **stack, unsigned int line_number)
 	}
 	new_node->n = temp;
 	new_node->prev = NULL;
-	new_node->next = *stack;
+	new_node->next = NULL;
 
-	if (*stack != NULL)
+	if (stack != NULL)
 	{
+		new_node->next = *stack;
 		(*stack)->prev = new_node;
 	}
 	*stack = new_node;
