@@ -39,4 +39,6 @@ void getf(stack_t **stack, char **opcode, unsigned int line_number);
 void op_push(stack_t **stack, unsigned int line_number);
 void op_pop(stack_t **stack, unsigned int line_number);
 extern char *instruct[2];
+void op_pall(stack_t **stack, unsigned int line_number);
+
 #endif

@@ -58,3 +58,23 @@ void op_pop(stack_t **stack, unsigned int line_number)
 
 	free(tmp);
 }
+#include <stdio.h>
+
+/**
+ * pall - Prints all the elements in the stack.
+ * @stack: Pointer to the stack.
+ * @line_number: Line number
+ *
+ * Return: nothing
+ */
+void op_pall(stack_t **stack, unsigned int line_number)
+{
+	stack_t *current = *stack;
+	(void)line_number;
+
+	while (current != NULL)
+	{
+		printf("%d\n", current->n);
+		current = current->next;
+	}
+}
