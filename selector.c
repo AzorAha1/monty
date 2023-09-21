@@ -28,6 +28,7 @@ void op_push(stack_t **stack, unsigned int line_number)
 	if (new_node == NULL)
 	{
 		fprintf(stderr, "Error: Memory allocation failed\n");
+		free(new_node);
 		exit(EXIT_FAILURE);
 	}
 	new_node->n = temp;
@@ -40,6 +41,7 @@ void op_push(stack_t **stack, unsigned int line_number)
 		(*stack)->prev = new_node;
 	}
 	*stack = new_node;
+	free(new_node);
 }
 /**
  * op_pop - Removes the top element of the stack.
