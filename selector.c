@@ -27,8 +27,7 @@ void op_push(stack_t **stack, unsigned int line_number)
 	new_node = malloc(sizeof(stack_t));
 	if (new_node == NULL)
 	{
-		printf("Error: Malloc failed\n");
-		free(new_node);
+		fprintf(stderr, "Error: Malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
 	new_node->n = temp;
