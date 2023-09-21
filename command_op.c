@@ -14,6 +14,7 @@ void getf(stack_t **stack, char **opcode, unsigned int line_number)
 		{"pop", op_pop},
 		{"pall", op_pall},
 		{"add", op_add},
+		{"pint", op_pint},
 		{NULL, NULL},
 	};
 	checker = 0;

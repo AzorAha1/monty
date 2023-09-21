@@ -54,7 +54,7 @@ void op_pop(stack_t **stack, unsigned int line_number)
 
 	if (*stack == NULL)
 	{
-		fprintf(stderr, "Error: can't pop an empty stack\n");
+		printf("L%d: can't pop an empty stack\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	tmp = *stack;
@@ -110,4 +110,20 @@ void op_add(stack_t **stack, unsigned int line_number)
 	temp->n = add;
 	temp->prev = NULL;
 	*stack = temp;
+}
+/**
+ * op_pint - add all the elements in the stack.
+ * @stack: pointer to the stack
+ * @line_number: Line number
+ * Description - adds all elements in stack
+ * Return: no return
+*/
+void op_pint(stack_t **stack, unsigned int line_number)
+{
+	if (*stack == NULL)
+	{
+		printf("L%d: can't pint, stack empty\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	printf("%d\n",(*stack)->n);
 }
