@@ -44,7 +44,7 @@ int main(int argc, char **argv)
 	{
 		free(lines[i]);
 	}
-	free(lineptr);
 	fclose(filed);
+	free(lineptr);
 	return (0);
 }
