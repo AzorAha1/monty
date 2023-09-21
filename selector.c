@@ -40,6 +40,7 @@ void op_push(stack_t **stack, unsigned int line_number)
 		(*stack)->prev = new_node;
 	}
 	*stack = new_node;
+	free(instruct[1]);
 }
 /**
  * op_pop - Removes the top element of the stack.
@@ -62,7 +63,9 @@ void op_pop(stack_t **stack, unsigned int line_number)
 	*stack = (*stack)->next;
 
 	if (*stack != NULL)
+	{
 		(*stack)->prev = NULL;
+	}
 
 	free(tmp);
 }
