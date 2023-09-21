@@ -54,7 +54,7 @@ void op_pop(stack_t **stack, unsigned int line_number)
 	stack_t *tmp;
 	(void)line_number;
 
-	if (*stack == NULL || !stack || !(*stack)->next)
+	if (*stack == NULL || !stack)
 	{
 		printf("L%d: can't pop an empty stack\n", line_number);
 		exit(EXIT_FAILURE);
