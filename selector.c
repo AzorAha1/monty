@@ -10,7 +10,6 @@
 void op_push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new_node;
-	stack_t *fprev;
 	int temp;
 
 	if (!instruct[1] || stack == NULL)
@@ -24,12 +23,6 @@ void op_push(stack_t **stack, unsigned int line_number)
 	{
 		fprintf(stderr, "L%d: usage: push integer", line_number);
 		exit(EXIT_FAILURE);
-	}
-	if (*stack)
-	{
-		fprev = *stack;
-		*stack = (*stack)->next;
-		free(fprev);
 	}
 	new_node = malloc(sizeof(stack_t));
 	if (new_node == NULL)
