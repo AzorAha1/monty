@@ -21,7 +21,7 @@ void op_push(stack_t **stack, unsigned int line_number)
 
 	if (temp == 0 && strcmp(instruct[1], "0") != 0)
 	{
-		printf("L%d: usage: push integer", line_number);
+		fprintf(stderr, "L%d: usage: push integer", line_number);
 		exit(EXIT_FAILURE);
 	}
 	new_node = malloc(sizeof(stack_t));
@@ -103,7 +103,7 @@ void op_add(stack_t **stack, unsigned int line_number)
 	add = 0;
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
-		printf("L%d: can't add, stack too short\n", line_number);
+		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	temp = *stack;
