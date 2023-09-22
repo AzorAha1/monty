@@ -39,6 +39,7 @@ int main(int argc, char **argv)
 		getf(&stack, instruct, index + 1);
 		index++;
 	}
+	freestack(&stack);
 	for (i = 0; i < linenum; i++)
 	{
 		free(lines[i]);
