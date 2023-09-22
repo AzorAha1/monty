@@ -21,10 +21,8 @@ int main(int argc, char **argv)
 	if (!filed)
 	{
 		printf("Error: Can't open file %s\n", argv[1]);
-		fclose(filed);
 		exit(EXIT_FAILURE);
 	}
-
 	checkargerror(argc);
 	while (getline(&lineptr, &n, filed) != -1)
 	{
