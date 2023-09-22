@@ -27,8 +27,7 @@ void op_push(stack_t **stack, unsigned int line_number)
 	new_node = malloc(sizeof(stack_t));
 	if (new_node == NULL)
 	{
-		fprintf(stderr, "Error: Memory allocation failed\n");
-		free(new_node);
+		fprintf(stderr, "Error: Malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
 	new_node->n = temp;
@@ -41,6 +40,7 @@ void op_push(stack_t **stack, unsigned int line_number)
 		(*stack)->prev = new_node;
 	}
 	*stack = new_node;
+	/*free(instruct[1]);*/
 }
 /**
  * op_pop - Removes the top element of the stack.
@@ -63,7 +63,9 @@ void op_pop(stack_t **stack, unsigned int line_number)
 	*stack = (*stack)->next;
 
 	if (*stack != NULL)
+	{
 		(*stack)->prev = NULL;
+	}
 
 	free(tmp);
 }
