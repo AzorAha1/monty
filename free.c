@@ -8,6 +8,7 @@
 void freestack(stack_t **stack)
 {
 	stack_t *temp;
+
 	while (*stack)
 	{
 		temp = *stack;
