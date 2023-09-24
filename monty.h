@@ -47,5 +47,6 @@ void op_add(stack_t **stack, unsigned int line_number);
 void op_pint(stack_t **stack, unsigned int line_number);
 void op_swap(stack_t **stack, unsigned int line_number);
 void freestack(stack_t **stack);
+void op_nop(stack_t **stack, unsigned int line_number);
 
 #endif
