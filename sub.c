@@ -11,12 +11,13 @@ void op_sub(stack_t **stack, unsigned int line_number)
 	stack_t *temp;
 
 	int add;
+
 	add = 0;
-        if (*stack == NULL || (*stack)->next == NULL)
-        {
-                fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
-                exit(EXIT_FAILURE);
-        }
+	if (*stack == NULL || (*stack)->next == NULL)
+	{
+		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
 	temp = *stack;
 	add += temp->n;
 	temp = temp->next;
