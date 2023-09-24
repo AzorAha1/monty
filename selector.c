@@ -14,7 +14,7 @@ void op_push(stack_t **stack, unsigned int line_number)
 
 	if (!instruct[1] || stack == NULL)
 	{
-		fprintf(stderr, "Error %d", line_number);
+		fprintf(stderr, "Error %d ", line_number);
 		exit(EXIT_FAILURE);
 	}
 	temp = atoi(instruct[1]);
