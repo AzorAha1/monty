@@ -21,7 +21,6 @@ void getf(stack_t **stack, char **opcode, unsigned int line_number)
 		{"add", op_add},
 		{"pint", op_pint},
 		{"swap", op_swap},
-		{"nop", op_nop},
 		{"sub", op_sub},
 		{NULL, NULL},
 	};

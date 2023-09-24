@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * op_swap - function to swap
+ * op_nop - function does nothing
  * @stack: stack
  * @line_number: line
  *

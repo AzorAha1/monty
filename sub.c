@@ -10,8 +10,7 @@ void op_sub(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp;
 
-	int add, sub;
-	sub = 0;
+	int add;
 	add = 0;
         if (*stack == NULL || (*stack)->next == NULL)
         {
