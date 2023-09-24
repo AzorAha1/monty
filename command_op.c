@@ -44,7 +44,6 @@ void getf(stack_t **stack, char **opcode, unsigned int line_number)
 	}
 	else
 	{
-		fprint(stderr);
 		exit(EXIT_FAILURE);
 	}
 }
