@@ -24,7 +24,7 @@ void op_push(stack_t **stack, unsigned int line_number)
 		fprintf(stderr, "L%d: usage: push integer", line_number);
 		exit(EXIT_FAILURE);
 	}
-	new_node = malloc(sizeof(stack_t));
+	new_node = (stack_t *)malloc(sizeof(stack_t));
 	if (new_node == NULL)
 	{
 		fprintf(stderr, "Error: Malloc failed\n");

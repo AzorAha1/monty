@@ -5,6 +5,7 @@
  * @argc: argument count
  * Return: return
  */
+
 char *instruct[2] = {NULL, NULL};
 int main(int argc, char **argv)
 {
